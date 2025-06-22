@@ -1,18 +1,20 @@
 #include <iostream>
 using namespace std;
 
-int main(){
+int main() {
     char texto[100];
+    int i = 0;
 
-    cout << "Ingresa el texto usando _ en lugar de espacios: ";
-    cin >> texto;
+    cout << "Ingresa un texto (máx 100 caracteres, termina con Enter): ";
+    cin.getline(texto, 100);  // lee toda la línea (sí se usa getline de cin, pero es básica)
 
-    for(int i = 0; texto[i] != '\0'; i++){
-        if(texto[i] == '_'){
+    while (texto[i] != '\0') {
+        if (texto[i] == ' ') {
             cout << endl;
         } else {
             cout << texto[i];
         }
+        i++;
     }
 
     return 0;
