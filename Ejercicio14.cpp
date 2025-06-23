@@ -14,12 +14,17 @@ void mistrcat(char str1[], char str2[]){
 		i++;
 		j++;
 	}
-	str1[i] = '\0'; // Fin de cadena
+	str1[i] = '\0'; 
 }
 
 int main(){
 	char str1[100] = "Bienvenido ";
 	char str2[] = "a programacion";
+
+	mistrcat(str1, str2);
+
+	cout << "Cadena resultante: " << str1 << endl;
+	cout << "Cadena original: " << str2 << endl;
 
 	return 0;
 }
