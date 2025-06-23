@@ -12,6 +12,7 @@ int main(){
     cout << "Escribe una frase: ";
     cin.getline(frase, 100);
 
+    // Guardar solo letras y pasarlas a minúscula
     for(int i = 0; frase[i] != '\0'; i++){
         if(isalpha(frase[i])){
             letras[j] = tolower(frase[i]);
@@ -21,6 +22,20 @@ int main(){
 
     letras[j] = '\0';
 
+    // Verificar si es palindromo
+    bool esPalindromo = true;
+    for(int i = 0; i < j / 2; i++){
+        if(letras[i] != letras[j - 1 - i]){
+            esPalindromo = false;
+            break;
+        }
+    }
+
+    if(esPalindromo){
+        cout << "Sí es un palindromo." << endl;
+    } else {
+        cout << "No es un palindromo." << endl;
+    }
 
     return 0;
 }
