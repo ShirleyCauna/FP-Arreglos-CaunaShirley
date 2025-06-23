@@ -4,21 +4,30 @@
 #include <cstring>
 using namespace std;
 
-// Función aun no implementada
+// Funcion que verifica si el apellido esta dentro del nombre completo
 bool pertenece(char nombre[], char apellido[]) {
-    // Falta la logica de verificación
-    return false;
+    if (strstr(nombre, apellido)) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 int main() {
     char nombreCompleto[100];
     char apellidoBuscado[30];
 
-    cout << "Ingresa el nombre completo de la persona: ";
+    cout << "Escribe el nombre completo de la persona: ";
     cin.getline(nombreCompleto, 100);
 
-    cout << "Ingresa el apellido a verificar: ";
+    cout << "Escribe el apellido que deseas buscar: ";
     cin.getline(apellidoBuscado, 30);
+
+    if (pertenece(nombreCompleto, apellidoBuscado)) {
+        cout << "Si pertenece a esa persona." << endl;
+    } else {
+        cout << "No pertenece a esa persona." << endl;
+    }
 
     return 0;
 }
