@@ -1,21 +1,26 @@
+// Invertir un vector e imprimirlo.
+
 #include <iostream>
 using namespace std;
 
 int main(){
 	int n;
-	cout << "Ingrese la cantidad de elementos: ";
+	cout << "Cantidad de elementos a usar: ";
 	cin >> n;
 
-	int inver[20]; // Vector fijo de tamaño 20
+	int inver[20];
 
-	cout << "Ingrese los elementos del arreglo: " << endl;
-
+	cout << "Ingresa los elementos del arreglo uno por uno:" << endl;
 	for (int i = 0; i < n; i++){
-		cout << "Vector #" << i + 1 << ": ";
+		cout << "- Elemento #" << i + 1 << ": ";
 		cin >> inver[i];
 	}
 
-	// Hasta aquí solo se ingresan los datos
+	cout << "\nEl vector invertido es:\n";
+	for (int i = n - 1; i >= 0; i--){
+		cout << inver[i] << " ";
+	}
 
+	cout << endl;
 	return 0;
 }
