@@ -3,11 +3,27 @@
 #include <iostream>
 using namespace std;
 
-// Estructura de la funcion, aun no usada
+// Funcion para comparar dos cadenas sin usar string.h
 int mistrcmp(char str1[], char str2[]) {
     int i = 0;
-    // Logica se implementara despues
-    return 0;
+
+    while (str1[i] != '\0' && str2[i] != '\0') {
+        if (str1[i] < str2[i]) {
+            return -1;
+        } else if (str1[i] > str2[i]) {
+            return 1;
+        }
+        i++;
+    }
+
+    // Si una cadena es mas larga que la otra
+    if (str1[i] == '\0' && str2[i] == '\0') {
+        return 0; // Son iguales
+    } else if (str1[i] == '\0') {
+        return -1; // str2 es mayor
+    } else {
+        return 1; // str1 es mayor
+    }
 }
 
 int main() {
@@ -20,6 +36,15 @@ int main() {
     cout << "Ingrese la segunda cadena: ";
     cin >> str2;
 
+    int resultado = mistrcmp(str1, str2);
+
+    if (resultado == 0) {
+        cout << "Las cadenas son iguales." << endl;
+    } else if (resultado == 1) {
+        cout << "La primera cadena es mayor." << endl;
+    } else {
+        cout << "La segunda cadena es mayor." << endl;
+    }
 
     return 0;
 }
