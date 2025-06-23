@@ -5,9 +5,34 @@ using namespace std;
 
 int main(){
     char frase[100];
+    int contador = 0;
+    bool correcto = true;
 
     cout << "Escribe una frase con parentesis: ";
     cin.getline(frase, 100);
+
+    for(int i = 0; frase[i] != '\0'; i++){
+        if(frase[i] == '('){
+            contador++;
+        }
+        if(frase[i] == ')'){
+            contador--;
+            if(contador < 0){
+                correcto = false;
+                break;
+            }
+        }
+    }
+
+    if(contador != 0){
+        correcto = false;
+    }
+
+    if(correcto){
+        cout << "Los parentesis estan balanceados." << endl;
+    } else {
+        cout << "Los parentesis NO estan bien balanceados." << endl;
+    }
 
     return 0;
 }
