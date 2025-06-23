@@ -1,4 +1,4 @@
-// Generar la función mistrcpy(str1,str2) que copia str2 en str1. No usar la funciones de String.h
+// Generar la funcion mistrcpy(str1,str2) que copia str2 en str1. No usar la funciones de String.h
 
 #include<iostream>
 using namespace std;
@@ -16,6 +16,10 @@ int main() {
 	char str1[20];
 	char str2[] = "programar en C++"; 
 
+	mistrcpy(str1, str2);
+
+	cout << "Cadena copiada: " << str1 << endl;
+	cout << "Cadena original: " << str2 << endl;
 
 	return 0;
 }
