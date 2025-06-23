@@ -4,10 +4,10 @@
 using namespace std;
 
 int main(){
-	// Declaración de variables necesarias
+	// Declaracion de variables necesarias
 	int n, suma = 0, sumaN = 0, sumaP = 0;
 
-	cout << "Ingrese la cantidad de números que desea usar: " << endl;
+	cout << "Ingrese la cantidad de numeros que desea usar: " << endl;
 	cin >> n;
 
 	int arr[100]; // Se considera que n no supera 100
@@ -16,7 +16,19 @@ int main(){
 	cout << "Ahora digite los valores uno por uno:" << endl;
 	for(int i = 0; i < n; i++){
 		cin >> arr[i];
+		suma = suma + arr[i];
+
+		if(arr[i] < 0){
+			sumaN = sumaN + arr[i];
+		} else {
+			sumaP = sumaP + arr[i];
+		}
 	}
+
+	// Resultados mostrados en pantalla
+	cout << "Suma total de todos los elementos: " << suma << endl;
+	cout << "Suma de los numeros positivos: " << sumaP << endl;
+	cout << "Suma de los numeros negativos: " << sumaN << endl;
 
 	return 0;
 }
